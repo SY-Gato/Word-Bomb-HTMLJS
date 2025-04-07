@@ -665,6 +665,79 @@ FrozenTrie.prototype = {
         }
 
         return node.final;
+    },
+
+ getNodeByIndex2: function( index )
+    {
+        // retrieve the 6-bit letter.
+        var final = this.data.get( this.letterStart + index * 6, 1 ) === 1;
+        var letter = String.fromCharCode(
+                this.data.get( this.letterStart + index * 6 + 1, 5 ) + 
+                'a'.charCodeAt(0));
+        var firstChild = this.directory.select( 0, index+1 ) - index;
+
+        // Since the nodes are in level order, this nodes children must go up
+        // until the next node's children start.
+        var childOfNextNode = this.directory.select( 0, index + 2 ) - index - 1;
+
+        //return new FrozenTrieNode( this, index, letter, final, firstChild,
+        //        childOfNextNode - firstChild );
+     let thing = {
+      "trie": this,
+      "index": index,
+      "letter": letter,
+      "final": final,
+      "firstChild": firstChild,
+      //"childCount": (childOfNextNode - firstChild);
+      //child
+      //"childCOunt
+      "childCount": (childOfNextNode - firstChild)
+     };
+
+     return thing;
+    },
+
+     lookup2: function(self=this, node1root, word ) 
+    {
+        //var node = this.getRoot();
+        //let node = this.getNodeByIndex(0;)
+        //let node= this.getNodeByIndex(0);
+        //let node = node1root;
+        //;l
+        //let node = self.getNodeByIndex(-)
+        //let node = self.getNodeByIndex(0);
+     let node = self.getNodeByIndex2(0);
+     //alert(jnoo
+     //alert(node);
+     //alrt/
+     //alert(JSON.stringify(node));
+        for ( var i = 0; i < word.length; i++ ) {
+            var child;
+            //var j = 0;
+            //for ( ; j < node.getChildCount(); j++ ) {
+            //let j;
+            let j = 0;
+            //for (j = 0; j < node.getChildCount(); j++) {
+            //let cc = node.getChildCount();
+         //for (j = 0; j < node.prototype.getCHild
+            //ofr
+            //for (j = 0; j < node.prototype.getChildCount(); j++) {
+         for (j = 0; j < node.childCount; j++) {
+                //child = node.getChild( j );
+          child = node.trie.getNodeByIndex2(node.firstChild + j);
+                if ( child.letter === word[i] ) {
+                    break;
+                }
+            }
+
+            //if ( j === node.getChildCount() ) {
+         if (j === node.childCount) {
+                return false;
+            }
+            node = child;
+        }
+
+        return node.final;
     }
 };
 
