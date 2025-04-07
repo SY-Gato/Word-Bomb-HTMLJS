@@ -809,7 +809,8 @@ function processEnter() {
         
             //if (dict.lookup(currentText)) {
         try {
-            if (dict.lookup(dict, null, currentText)) {
+            //if (dict.lookup(dict, null, currentText)) {
+            if (dict.lookup2(dict, null, currentText)) {
                 console.log("Correct!");
                 currentText = "";
                 requiredText = getRandomCombination();
