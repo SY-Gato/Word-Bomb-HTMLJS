@@ -1,6 +1,10 @@
 //import {FrozenTrie} from './SuccinctTrieData.js';
 //import { FrozenTrie } from "./SteveHanovSuccinctTrie";
-import {FrozenTrie} from './SteveHanovSuccinctTrie.js';
+//import {FrozenTrie} from './SteveHanovSuccinctTrie.js';
+//
+//
+import {FrozenTrie} from './SteveHanovCodeSuccinctTrie.js';
+//
 
 
 
@@ -803,7 +807,8 @@ function processEnter() {
             //cibsike,
             console.log(node,);*/
         
-            if (dict.lookup(currentText)) {
+            //if (dict.lookup(currentText)) {
+            if (dict.lookup(dict, null, currentText)) {
                 console.log("Correct!");
                 currentText = "";
                 requiredText = getRandomCombination();
