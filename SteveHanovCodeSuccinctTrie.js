@@ -637,6 +637,8 @@ FrozenTrie.prototype = {
         let node = self.getNodeByIndex(0);
      //alert(jnoo
      alert(node);
+     //alrt/
+     alert(JSON.stringify(node));
         for ( var i = 0; i < word.length; i++ ) {
             var child;
             //var j = 0;
