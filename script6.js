@@ -808,6 +808,7 @@ function processEnter() {
             console.log(node,);*/
         
             //if (dict.lookup(currentText)) {
+        try {
             if (dict.lookup(dict, null, currentText)) {
                 console.log("Correct!");
                 currentText = "";
@@ -815,7 +816,11 @@ function processEnter() {
                 processNewPhrase();
                 processNormalKey();
                 correctCount += 1;
+                alert("New");
             }
+        } catch (err) {
+            alert(err);
+        }
                 
     }
 }
