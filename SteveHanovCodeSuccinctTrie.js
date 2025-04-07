@@ -708,9 +708,9 @@ FrozenTrie.prototype = {
         //let node = self.getNodeByIndex(0);
      let node = self.getNodeByIndex2(0);
      //alert(jnoo
-     //alert(node);
+     alert(node);
      //alrt/
-     //alert(JSON.stringify(node));
+     alert(JSON.stringify(node));
         for ( var i = 0; i < word.length; i++ ) {
             var child;
             //var j = 0;
@@ -724,7 +724,8 @@ FrozenTrie.prototype = {
             //for (j = 0; j < node.prototype.getChildCount(); j++) {
          for (j = 0; j < node.childCount; j++) {
                 //child = node.getChild( j );
-          child = node.trie.getNodeByIndex2(node.firstChild + j);
+          //child = node.trie.getNodeByIndex2(node.firstChild + j);
+          child = this.getNodeByIndex2(node.firstChild + j);
                 if ( child.letter === word[i] ) {
                     break;
                 }
