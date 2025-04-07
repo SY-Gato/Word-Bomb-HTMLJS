@@ -643,7 +643,11 @@ FrozenTrie.prototype = {
             //for ( ; j < node.getChildCount(); j++ ) {
             //let j;
             let j = 0;
-            for (j = 0; j < node.getChildCount(); j++) {
+            //for (j = 0; j < node.getChildCount(); j++) {
+            //let cc = node.getChildCount();
+         //for (j = 0; j < node.prototype.getCHild
+            //ofr
+            for (j = 0; j < node.prototype.getChildCount(); j++) {
                 child = node.getChild( j );
                 if ( child.letter === word[i] ) {
                     break;
